@@ -1,0 +1,61 @@
+
+<div>
+<form (ngSubmit)="onSubmit(formTestPaper)" #formTestPaper='ngForm' class="formTest mx-auto">
+
+<div *ngFor='let ques of testques; let i = index'>
+   <h4>Q{{ques.id}}. {{ques.ques}}</h4>
+        <div class="quesSet">
+   <!-- <ul> -->
+    <!-- <li>{{ques.ans1}}</li> <mat-checkbox name='a1' matSuffix>Correct Answer</mat-checkbox> -->
+         (a1) <mat-form-field>
+          <input matInput disabled value='{{ ques.ans1 }}'>
+          <mat-checkbox [disabled]='this.qbank.ansSubmit1' ngModel name='{{ques.id+"."}}a1' matSuffix>Mark Option as Correct</mat-checkbox>
+          </mat-form-field>
+          <br>
+
+        (a2) <mat-form-field>
+          <input matInput disabled value='{{ ques.ans2 }}'>
+          <mat-checkbox [disabled]='this.qbank.ansSubmit1' ngModel name='{{ques.id+"."}}a2' matSuffix>Mark Option as Correct</mat-checkbox>
+          </mat-form-field>
+        <br>
+
+        (a3) <mat-form-field>
+          <input matInput disabled value='{{ ques.ans3 }}'>
+          <mat-checkbox [disabled]='this.qbank.ansSubmit1' ngModel name='{{ques.id+"."}}a3' matSuffix>Mark Option as Correct</mat-checkbox>
+          </mat-form-field>
+        <br>
+
+        (a4) <mat-form-field>
+          <input matInput disabled value='{{ ques.ans4 }}'>
+          <mat-checkbox [disabled]='this.qbank.ansSubmit1' ngModel name='{{ques.id+"."}}a4' matSuffix>Mark Option as Correct</mat-checkbox>
+          </mat-form-field>
+        <br>
+
+    <!-- <li>{{ques.ans2}}</li>
+    <li>{{ques.ans3}}</li>
+    <li>{{ques.ans4}}</li> -->
+  <!-- </ul> -->
+    <div *ngIf="this.qbank.ansSubmit1" >
+                <p class="mb-3 solPara"><strong>Solution:</strong> You answered {{ qbank.ansSubmit1[i][1] }}. Correct Answer is {{ qbank.ansKey[i][1] }}. Your Answer is <span [style.color]=" compare(qbank.ansSubmit1[i][1],qbank.ansKey[i][1])=='Correct'? 'green':'red' "><strong>{{ compare(qbank.ansSubmit1[i][1],qbank.ansKey[i][1]) }} </strong></span>    </p>
+    </div>
+
+  </div>
+<br>
+
+</div>
+
+<div class="btnCenter">
+<button mat-raised-button color="primary" class="mx-auto float1" type="submit" *ngIf="!this.qbank.ansSubmit1" > Submit Your Responses </button>
+<!-- <sticky [sticky-orientation]="right" [sticky-start]="10" [sticky-offset-bottom]='50' [sticky-parent]=false > <button  mat-raised-button color="primary" class="ml-2" type="submit" *ngIf="!this.quesbank.ansSubmit1" >Submit Your Responses.</button></sticky> -->
+<button mat-raised-button color="warn" class="ml-2 float1" *ngIf="this.qbank.ansSubmit1" type="button" (click)="this.showResult()"> Show  Result </button>
+</div>
+
+</form>
+</div>
+
+<div>
+
+<br>
+<!-- <app-result *ngIf="showres" [result]="this.result2" [a]="text"></app-result> -->
+
+</div>

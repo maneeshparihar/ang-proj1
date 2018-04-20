@@ -1,0 +1,24 @@
+<div class="showResult">
+  <!-- {{a}}; -->
+  <!-- {{result}}; -->
+  <!-- {{result}} -->
+  <h5>You got <strong>{{this.qbank2.rightQuestions}} Correct</strong> out of <strong> Total {{this.qbank2.Questions.length}} Questions </strong>Attempted.
+  <br>
+  Passing Marks are 75%.
+  <br>
+  Your percentage marks are {{ (this.b/this.c)*100 | number: '0.2-2' }} %.
+
+  You Have <span class="passFail" [style.color]="b/c>=0.75 ? 'green' : 'red' "> {{ b/c>=0.75 ? 'Passed' : (b/c<=0.75 ? 'Failed' : '')  }}</span>
+</h5>
+ <!-- here we have used double ternary to determine pass or fail value  -->
+
+
+<img [src]="b/c>=0.75 ? this.passImgURL: this.failImgURL" width="200px">
+
+ <br><br>
+ <!-- <button type="button" mat-raised-button color="primary" class="ml-2 mt-2" routerLink='/test' >Try Another Attempt</button> -->
+ <button type="button" mat-raised-button color="primary" class="ml-2 mt-2" (click)="this.tryNew()" >Try Another Attempt</button>
+
+
+
+</div>

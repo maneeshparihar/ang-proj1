@@ -1,0 +1,23 @@
+<div class="homeContent">
+
+  <p>This is test centre app. You need to take test and attempt questions.</p>
+<ul>
+  <li> <strong>Pass</strong> percentage is set at 75%.</li>
+  <li> You can <strong>add more questions</strong> using the link above. The questions will be available for current session but will not be persistent as they are not being saved in a database.
+  <li> Questions are <strong>multiple choice</strong> and can have multiple options as correct answers.
+  <li> Once you attempt questions you can click on the <strong>Submit Your Responses button</strong>.
+  <li> Which will show you <strong>evaluation</strong> of your questions (which answere are correct and incorrect along with correct options).
+  <li> Thenk click on <strong>'Show Result'</strong> button which will take you to the result section whether result is pass or not.
+</ul>
+
+  <div style="text-align: center">
+  <button type="button" mat-raised-button color="primary" class="ml-2 mt-2" routerLink='/test' >Start New Test</button>
+    <!-- <button type="button" mat-raised-button color="primary" class="ml-2 mt-2" (click)="motdFn()" >Get Message of the Day</button> -->
+    <br>
+    <strong><h5 class="mt-3">Quote of the Day</h5></strong>
+    <em><blockquote>{{this.motd[0]}}</blockquote></em>
+    by - <span>{{this.motd[1]}}</span>
+    <p *ngIf="this.motd[0]"><strong>API Courtesy:</strong> https://talaikis.com/random_quotes_api/</p>
+  </div>
+
+  </div>

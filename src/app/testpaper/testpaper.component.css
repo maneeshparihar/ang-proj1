@@ -1,0 +1,41 @@
+.formTest {
+
+  /* padding: 3%; */
+  width: 80%;
+
+}
+
+input:disabled {
+  color: #8b8a8a;
+  width: 120%;
+}
+
+.quesSet{
+  padding-left: 5%;
+
+ width: 100%;
+}
+
+mat-form-field{
+width: 60%;
+}
+
+.solPara{
+  background-color: rgb(235, 232, 232);
+  width: 70%;
+  text-align: start;
+  padding-left: 2%;
+}
+
+.float1 {
+position: fixed;
+bottom: 0px;
+width: auto;
+/* left: auto; */
+/* left: 100px; */
+/* text-align: center; */
+}
+
+.btnCenter {
+  text-align: center;
+}

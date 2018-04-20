@@ -1,0 +1,15 @@
+.homeContent{
+  text-align: left;
+  /* align-items: center; */
+  margin: 0 auto;
+   width: 50%;
+}
+
+ul {
+  text-align: left;
+
+}
+
+li {
+  margin: 0 auto;
+}

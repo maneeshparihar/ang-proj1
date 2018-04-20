@@ -1,0 +1,43 @@
+<h3 class="padding1">Add Questions to Question Bank</h3>
+
+<form (ngSubmit)="onSubmit(formquesbank)" #formquesbank='ngForm' class="form1">
+
+<div class="example-container">
+  <h5>Enter Question which is to be added to database</h5>
+  <mat-form-field>
+  <input ngModel name='q' matInput [{ngModel}]="quesText" placeholder="Enter Question to be added.">
+  <span matSuffix>?</span>
+  </mat-form-field>
+
+<br>
+<h5>Provide Options for Multi Choice and Mark which options are correct</h5>
+
+  <mat-form-field>
+    <input ngModel name='o1' required matInput placeholder="Option 1 - Mark Checkbox if this is correct">
+    <mat-checkbox ngModel name='a1' matSuffix>Correct Answer</mat-checkbox>
+    </mat-form-field>
+
+  <mat-form-field>
+    <input ngModel name='o2' required matInput placeholder="Option 2 Mark Checkbox if this is correct">
+    <mat-checkbox ngModel name='a2' matSuffix>Correct Answer</mat-checkbox>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input ngModel name='o3' required matInput placeholder="Option 3 Mark Checkbox if this is correct">
+    <mat-checkbox ngModel name='a3' matSuffix>Correct Answer</mat-checkbox>
+  </mat-form-field>
+
+  <mat-form-field>
+    <input ngModel name='o4' required matInput placeholder="Option 4 Mark Checkbox if this is correct">
+    <mat-checkbox ngModel name='a4' matSuffix>Correct Answer</mat-checkbox>
+  </mat-form-field>
+
+</div>
+<button mat-raised-button color="primary" [disabled]='formquesbank.invalid' type="submit">Add Question to Database</button>
+<span [style.margin-left]="'2%'" >{{this.noOfQuesAdded}} Question(s) Added.</span>
+</form>
+
+
+
+<hr>
+

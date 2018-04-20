@@ -1,0 +1,24 @@
+Design:
+- integrated MDB (material design for bootstrap) 
+- integrated Material for Angular 
+
+Model: 
+- an angular Service has been used containing 4 hard coded questions with correct answers 
+- there is a link to add more questions (any number of questions can be added with multiple options marking the correct options as answer). 
+however as there is no db used, added questions will not be persistent and will only remain for the current session. Add questions has a counter which informs how many questions have been added. 
+- more than 75% correct attempts leads to pass otherwise fail. 
+
+
+Features:
+- on the home page Quote / message is displayed using Http client and using a free API generating random message upon every refresh. 
+- routing for menu navigation - default routing (to home component) and catch all routing.
+- user attempts the questions (multiple choice) on 'Test' page and submits.
+- form is disabled and users answers are compared with the answer keys. 
+- Evaluation is presented with correct and incorrect answers and expected response.
+- click on "show result" after evaluating answers. If more than 75% of the answers are right then it shows Pass or else it shows as fail. respective message / image is shown. 
+- user can take another test from result page or navigate to home page for new test attempt. 
+
+
+Areas of improvement 
+- the answer key can be made more secure if the service only exposes the answer key using a get function rather than as a property. 
+- Randomizing order of existing questions / options can be done; although needs more indexing than what is currently done. 
